@@ -116,8 +116,10 @@ abstract class image {
             $img = $image->image;
 
         } elseif (is_array($image)) {
-            list($key, $width) = each($image);
-            list($key, $height) = each($image);
+            $width = current($image);
+            $height = current($image);
+            //list($key, $width) = each($image);
+            //list($key, $height) = each($image);
             $img = $this->getBlankImage($width, $height);
 
         } else
